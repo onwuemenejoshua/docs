@@ -1,86 +1,133 @@
 ---
-title: 'Quickstart'
-description: 'Start building awesome documentation in under 5 minutes'
+title: "⚡ Quickstart"
+description: "This page will show you how to make an API Request"
 ---
 
-## Setup your development
+For this quickstart, we’ll use the **"Details endpoint"** under the **"Account Folder"** to get the public details of an account on TMDB.
 
-Learn how to update your docs locally and deploy them to the public.
+```
+   GET https://api.themoviedb.org/3/account/{account_id}
+```
 
-### Edit and preview
+1. Get the account_id
 
-<AccordionGroup>
-  <Accordion icon="github" title="Clone your docs locally">
-    During the onboarding process, we created a repository on your Github with
-    your docs content. You can find this repository on our
-    [dashboard](https://dashboard.mintlify.com). To clone the repository
-    locally, follow these
-    [instructions](https://docs.github.com/en/repositories/creating-and-managing-repositories/cloning-a-repository)
-    in your terminal.
-  </Accordion>
-  <Accordion icon="rectangle-terminal" title="Preview changes">
-    Previewing helps you make sure your changes look as intended. We built a
-    command line interface to render these changes locally. 1. Install the
-    [Mintlify CLI](https://www.npmjs.com/package/mintlify) to preview the
-    documentation changes locally with this command: ``` npm i -g mintlify ```
-    2. Run the following command at the root of your documentation (where
-    `mint.json` is): ``` mintlify dev ```
-  </Accordion>
-</AccordionGroup>
+The endpoint to fetch the account_id:
 
-### Deploy your changes
+```
+GET https://api.themoviedb.org/3/account
+```
 
-<AccordionGroup>
+- Add your query parameter which are; **your_bearer_token** to authenticate your request and your **session_id**
 
-<Accordion icon="message-bot" title="Install our Github app">
-  Our Github app automatically deploys your changes to your docs site, so you
-  don't need to manage deployments yourself. You can find the link to install on
-  your [dashboard](https://dashboard.mintlify.com). Once the bot has been
-  successfully installed, there should be a check mark next to the commit hash
-  of the repo.
-</Accordion>
-<Accordion icon="rocket" title="Push your changes">
-  [Commit and push your changes to
-  Git](https://docs.github.com/en/get-started/using-git/pushing-commits-to-a-remote-repository#about-git-push)
-  for your changes to update in your docs site. If you push and don't see that
-  the Github app successfully deployed your changes, you can also manually
-  update your docs through our [dashboard](https://dashboard.mintlify.com).
-</Accordion>
+```
+GET https://api.themoviedb.org/3/account?bearer_token=YOUR_BEARER_TOKEN&session_id=YOUR_SESSION_ID
+```
 
-</AccordionGroup>
+Example response
 
-## Update your docs
+```
+{
+  "id": 12345678, //Your account_id
+  "name": "YourUsername",
+  "include_adult": false,
+  "username": "YourUsername",
+  "avatar": {
+    "gravatar": {
+      "hash": "abc123def456ghi789"
+    },
+    "tmdb": {
+      "avatar_path": "/path/to/avatar.jpg"
+    }
+  },
+  "iso_639_1": "en",
+  "iso_3166_1": "US"
+}
+```
 
-Add content directly in your files with MDX syntax and React components. You can use any of our components, or even build your own.
+<Note>Your account_id is an integer value.</Note>
 
-<CardGroup>
+2. Get the account details endpoint.
 
-<Card title="Style Your Docs" icon="paintbrush" href="/settings/global">
-  Add flair to your docs with personalized branding.
-</Card>
+```
+   GET https://api.themoviedb.org/3/account/{account_id}
+```
 
-<Card
-  title="Add API Endpoints"
-  icon="square-code"
-  href="/api-playground/configuration"
->
-  Implement your OpenAPI spec and enable API user interaction.
-</Card>
+Replace {account_id} with your TMDb account_id.
 
-<Card
-  title="Integrate Analytics"
-  icon="chart-mixed"
-  href="/analytics/supported-integrations"
->
-  Draw insights from user interactions with your documentation.
-</Card>
+- Add your bearer token
 
-<Card
-  title="Host on a Custom Domain"
-  icon="browser"
-  href="/settings/custom-domain/subdomain"
->
-  Keep your docs on your own website's subdomain.
-</Card>
+To authenticate your request, include your bearer_token as a query parameter or in the request header
 
-</CardGroup>
+    * Using the bearer_token as a Query Parameter
+
+    ```
+    https://api.themoviedb.org/3/account/{account_id}?bearer_token=YOUR_BEARER_TOKEN
+    ```
+
+    * Using the bearer_token in the Request Header
+
+    ```
+    GET https://api.themoviedb.org/3/account/{account_id}
+    Authorization: Bearer YOUR_BEARER_TOKEN
+    ```
+
+3. Make the Request
+
+Below are examples of how to make the request using different tools:
+
+- Using cURL
+
+Run the following command in your terminal:
+
+```
+curl "https://api.themoviedb.org/3/account/{account_id}?api_key=YOUR_BEARER_TOKEN"
+```
+
+- Using Postman
+
+  - Open Postman and create a new request.
+
+  - Set the request type to GET.
+
+  - Enter the URL: https://api.themoviedb.org/3/account/{account_id}?api_key=YOUR_API_KEY.
+
+  - Click Send.
+
+- Using Python
+  Here’s an example using the requests library:
+
+```Python
+import requests
+
+api_key = "YOUR_API_KEY"
+account_id = "YOUR_ACCOUNT_ID"
+url = f"https://api.themoviedb.org/3/account/{account_id}?api_key={your_bearer_token}"
+
+response = requests.get(url)
+data = response.json()
+
+print(data)
+```
+
+4. Example response
+
+If the request is successful, you’ll receive a JSON response containing details about the account. Here’s an example response:
+
+```
+{
+  "id": 12345678,
+  "name": "YourUsername",
+  "include_adult": false,
+  "username": "YourUsername",
+  "avatar": {
+    "gravatar": {
+      "hash": "abc123def456ghi789"
+    },
+    "tmdb": {
+      "avatar_path": "/path/to/avatar.jpg"
+    }
+  },
+  "iso_639_1": "en",
+  "iso_3166_1": "US"
+}
+```

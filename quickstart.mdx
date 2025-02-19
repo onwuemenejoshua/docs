@@ -17,15 +17,15 @@ The endpoint to fetch the account_id:
 GET https://api.themoviedb.org/3/account
 ```
 
-- Add your query parameter which are; **your_bearer_token** to authenticate your request and your **session_id**
+- Add your query parameter which are; **your_bearer_token** to authenticate your request.
 
 ```
-GET https://api.themoviedb.org/3/account?bearer_token=YOUR_BEARER_TOKEN&session_id=YOUR_SESSION_ID
+GET https://api.themoviedb.org/3/account?bearer_token=YOUR_BEARER_TOKEN
 ```
 
 Example response
 
-```
+```json
 {
   "id": 12345678, //Your account_id
   "name": "YourUsername",
@@ -113,7 +113,7 @@ print(data)
 
 If the request is successful, you’ll receive a JSON response containing details about the account. Here’s an example response:
 
-```
+```json
 {
   "id": 12345678,
   "name": "YourUsername",

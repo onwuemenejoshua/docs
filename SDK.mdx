@@ -1,0 +1,197 @@
+---
+title: "🛠️ SDKs and Libraries"
+description: "This page provides information about available SDKs, libraries, and client tools, along with installation instructions and usage examples."
+---
+
+To make it easier to integrate with the TMDB API, we provide and support a variety of SDKs (Software Development Kits) and client libraries for popular programming languages. These libraries handle authentication, request formatting, and response parsing, allowing you to focus on building your application.
+
+## Official SDKs and Libraries
+
+The following are officially supported SDKs and libraries for the TMDB API:
+
+- JavaScript/Node.js
+
+  - Library: `tmdb-api-client`
+
+  - Installation:
+
+  ```bash
+  npm install tmdb-api-client
+  ```
+
+  - Usage example
+
+  ```JavaScript
+      const TMDB = require('tmdb-api-client');
+      const client = new TMDB('YOUR_API_KEY');
+
+      client.movies.getPopular()
+          .then(response => console.log(response.results))
+          .catch(error => console.error(error));
+  ```
+
+* Python
+
+  - Library: `tmdbv3api`
+
+  - Installation:
+
+  ```bash
+  pip install tmdbv3api
+  ```
+
+  - Usage example
+
+  ```Python
+      from tmdbv3api import TMDb, Movie
+
+      tmdb = TMDb()
+      tmdb.api_key = 'YOUR_API_KEY'
+
+      movie = Movie()
+      popular_movies = movie.popular()
+
+      for m in popular_movies:
+          print(m.title)
+  ```
+
+* JavaScript
+
+      * Library: ```tmdb-java```
+
+      * Installation:
+      Add the following dependency to your ```pom.xml``` (Maven):
+
+      ```xml
+      <dependency>
+          <groupId>com.github.holgerbrandl</groupId>
+          <artifactId>tmdb-java</artifactId>
+          <version>1.0.0</version>
+      </dependency>
+      ```
+
+      * Usage examples
+
+      ```java
+          import com.github.holgerbrandl.tmdb.TMDbClient;
+          import com.github.holgerbrandl.tmdb.movies.Movie;
+
+          public class Main {
+              public static void main(String[] args) {
+              TMDbClient client = new TMDbClient("YOUR_API_KEY");
+              List<Movie> popularMovies = client.getPopularMovies();
+
+              for (Movie movie : popularMovies) {
+                  System.out.println(movie.getTitle());
+          }
+      }
+
+  }
+
+  ```
+
+  ```
+
+* PHP
+
+      * Library: ```php-tmdb-api```
+
+      * Installation:
+
+      ```bash
+      composer require php-tmdb/api
+      ```
+
+      * Usage example
+
+      ```php
+          require 'vendor/autoload.php';
+
+          use Tmdb\Client;
+          use Tmdb\Repository\MovieRepository;
+
+          $client = new Client(['api_token' => 'YOUR_API_KEY']);
+          $movieRepository = new MovieRepository($client);
+
+          $popularMovies = $movieRepository->getPopular();
+
+              foreach ($popularMovies as $movie) {
+                  echo $movie->getTitle() . PHP_EOL;
+
+  }
+  ```
+
+## Community-Maintained Libraries
+
+In addition to the official SDKs, the TMDB community has contributed libraries for other programming languages. These are not officially supported but may be useful:
+
+- Go
+
+      * Library: ```go-tmdb```
+
+      * GitHub: [go-tmdb](https://github.com/cyruzin/go-tmdb)
+
+      * Installation:
+      ```bash
+          go get github.com/cyruzin/go-tmdb
+      ```
+
+      * Usage examples:
+
+      ```go
+          package main
+
+          import (
+          "fmt"
+          "github.com/cyruzin/go-tmdb"
+      )
+
+      func main() {
+          tmdbClient, err := tmdb.Init("YOUR_API_KEY")
+          if err != nil {
+              panic(err)
+      }
+
+      movies, err := tmdbClient.GetMoviePopular(nil)
+      if err != nil {
+          panic(err)
+      }
+
+      for _, movie := range movies.Results {
+          fmt.Println(movie.Title)
+      }
+
+  }
+  ```
+
+- C#
+
+      * Library: ```TMDbLib```
+
+      * GitHub: [TMDbLib](https://github.com/LordMike/TMDbLib)
+
+      * Installation:
+
+      ```bash
+          dotnet add package TMDbLib
+      ```
+
+      * Usage example:
+
+      ```C#
+          using TMDbLib.Client;
+
+          var client = new TMDbClient("YOUR_API_KEY");
+          var popularMovies = client.GetMoviePopularListAsync().Result;
+
+          foreach (var movie in popularMovies.Results)
+          {
+              Console.WriteLine(movie.Title);
+          }
+      ```
+
+  </Note>
+To see other SDK and Libraries that our API support, pls visit the [library](https://developer.themoviedb.org/docs/wrappers-and-libraries) page
+</Note>
+
+By using these SDKs and libraries, you can streamline your integration with the TMDB API and focus on building amazing applications! 🚀

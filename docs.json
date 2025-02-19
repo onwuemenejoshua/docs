@@ -19,7 +19,11 @@
               "introduction",
               "authentication",
               "quickstart",
-              "Error-code"
+              "Error-code",
+              "pagination",
+              "SDK",
+              "Glossary",
+              "Versioning"
             ]
           }
          

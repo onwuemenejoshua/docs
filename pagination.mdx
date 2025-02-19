@@ -1,0 +1,81 @@
+---
+title: "📄 Pagination"
+description: "This page explains how to handle pagination and filtering when making requests to the API."
+---
+
+## Pagination and Filtering
+
+When working with the TMDB API, many endpoints return large datasets. To manage this data efficiently, our API supports pagination and filtering.
+
+### Pagination
+
+Pagination allows you to retrieve a subset of the available data by specifying the number of items to return. Most endpoints that return a list of items (e.g., movies, TV shows, or people) are paginated. This means the results are split into smaller chunks (pages) to improve performance and usability.
+
+#### How Pagination Works
+
+By default, the API returns 20 items per page.
+
+You can control which page of results to retrieve using the page query parameter.
+
+The response includes metadata about the total number of pages and results.
+
+**Example Request**
+
+To retrieve the second page of popular movies:
+
+```
+GET https://api.themoviedb.org/3/movie/popular?your_bearer_token=YOUR_BEARER_TOKEN&page=2
+```
+
+**Response Structure**
+
+The response includes the following pagination-related fields:
+
+```json
+{
+  "page": 2,
+  "results": [
+    // List of items
+  ],
+  "total_pages": 500,
+  "total_results": 10000
+}
+```
+
+- page: The current page number.
+
+- results: The list of items for the current page.
+
+- total_pages: The total number of pages available.
+
+- total_results: The total number of items across all pages.
+
+### Filtering
+
+Many endpoints allow you to filter results based on specific criteria. Filtering is done using query parameters in the request URL.
+
+Here are some commonly used filter parameters:
+
+| Parameters  | Descriptions                                              | Example                  |
+| ----------- | --------------------------------------------------------- | ------------------------ |
+| language    | Filter results by language (e.g., en-US).                 | &language=en-US          |
+| region      | Filter results by region (e.g., US).                      | &region=US               |
+| year        | Filter movies or TV shows by release year.                | &year=2020               |
+| sort_by     | Sort results by a specific field (e.g., popularity.desc). | &sort_by=popularity.desc |
+| with_genres | Filter movies or TV shows by genre IDs.                   | &with_genres=28,12       |
+
+**Filtered Request**
+
+To retrieve popular movies released in 2020 with a minimum vote average of 7:
+
+```
+GET https://api.themoviedb.org/3/movie/popular?your_bearer_token=YOUR_BEARER_TOKEN&year=2020&vote_average.gte=7
+```
+
+### Combining Pagination and Filtering
+
+You can combine pagination and filtering to retrieve specific subsets of data. For example, to get the third page of action movies (genre_id=28) sorted by popularity:
+
+```
+GET https://api.themoviedb.org/3/discover/movie?your_bearer_token=YOUR_BEARER_TOKEN&with_genres=28&sort_by=popularity.desc&page=3
+```

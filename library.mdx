@@ -55,7 +55,7 @@ The following are officially supported SDKs and libraries for the TMDB API:
           print(m.title)
   ```
 
-* JavaScript
+* Java
 
       * Library: ```tmdb-java```
 
@@ -70,27 +70,23 @@ The following are officially supported SDKs and libraries for the TMDB API:
       </dependency>
       ```
 
-      * Usage examples
+  - Usage examples
 
-      ```java
-          import com.github.holgerbrandl.tmdb.TMDbClient;
-          import com.github.holgerbrandl.tmdb.movies.Movie;
+    ```java
+        import com.github.holgerbrandl.tmdb.TMDbClient;
+        import com.github.holgerbrandl.tmdb.movies.Movie;
 
-          public class Main {
-              public static void main(String[] args) {
-              TMDbClient client = new TMDbClient("YOUR_API_KEY");
-              List<Movie> popularMovies = client.getPopularMovies();
+        public class Main {
+            public static void main(String[] args) {
+            TMDbClient client = new TMDbClient("YOUR_API_KEY");
+            List<Movie> popularMovies = client.getPopularMovies();
 
-              for (Movie movie : popularMovies) {
-                  System.out.println(movie.getTitle());
-          }
-      }
-
-  }
-
-  ```
-
-  ```
+            for (Movie movie : popularMovies) {
+                System.out.println(movie.getTitle());
+            }
+        }
+    }
+    ```
 
 * PHP
 
@@ -118,8 +114,9 @@ The following are officially supported SDKs and libraries for the TMDB API:
               foreach ($popularMovies as $movie) {
                   echo $movie->getTitle() . PHP_EOL;
 
-  }
-  ```
+                }
+
+        ```
 
 ## Community-Maintained Libraries
 
@@ -132,6 +129,7 @@ In addition to the official SDKs, the TMDB community has contributed libraries f
       * GitHub: [go-tmdb](https://github.com/cyruzin/go-tmdb)
 
       * Installation:
+
       ```bash
           go get github.com/cyruzin/go-tmdb
       ```
@@ -144,54 +142,55 @@ In addition to the official SDKs, the TMDB community has contributed libraries f
           import (
           "fmt"
           "github.com/cyruzin/go-tmdb"
-      )
+        )
 
       func main() {
           tmdbClient, err := tmdb.Init("YOUR_API_KEY")
           if err != nil {
               panic(err)
-      }
+            }
 
       movies, err := tmdbClient.GetMoviePopular(nil)
       if err != nil {
           panic(err)
-      }
+        }
 
       for _, movie := range movies.Results {
           fmt.Println(movie.Title)
-      }
+        }
 
   }
-  ```
 
 - C#
 
-      * Library: ```TMDbLib```
+        * Library: ```TMDbLib```
 
-      * GitHub: [TMDbLib](https://github.com/LordMike/TMDbLib)
+        * GitHub: [TMDbLib](https://github.com/LordMike/TMDbLib)
 
-      * Installation:
+        * Installation:
 
-      ```bash
-          dotnet add package TMDbLib
-      ```
+        ```bash
+            dotnet add package TMDbLib
+        ```
 
-      * Usage example:
+        * Usage example:
 
-      ```C#
-          using TMDbLib.Client;
+        ```C#
+            using TMDbLib.Client;
 
-          var client = new TMDbClient("YOUR_API_KEY");
-          var popularMovies = client.GetMoviePopularListAsync().Result;
+            var client = new TMDbClient("YOUR_API_KEY");
+            var popularMovies = client.GetMoviePopularListAsync().Result;
 
-          foreach (var movie in popularMovies.Results)
-          {
-              Console.WriteLine(movie.Title);
-          }
-      ```
+            foreach (var movie in popularMovies.Results)
+            {
+                Console.WriteLine(movie.Title);
+            }
+        ```
 
-  </Note>
+<Note>
+
 To see other SDK and Libraries that our API support, pls visit the [library](https://developer.themoviedb.org/docs/wrappers-and-libraries) page
+
 </Note>
 
 By using these SDKs and libraries, you can streamline your integration with the TMDB API and focus on building amazing applications! 🚀

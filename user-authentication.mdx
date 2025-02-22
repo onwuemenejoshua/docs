@@ -1,0 +1,53 @@
+---
+title: "User Authentication"
+icon: "user"
+description: "This page will show you how to get your session_id"
+---
+
+Steps for User Authentication with TMDB API
+
+<Steps>
+<Step title = "Step 1">
+Get your Bearer token:
+
+<Note>
+  Visit the [Authentication](/Authentication) page to know how to get your
+  bearer token
+</Note>
+
+</Step>
+
+<Step title = "Step 2">
+Create a Request Token:
+
+- Call the `https://api.themoviedb.org/3/authentication/token/new` endpoint to generate a request token.
+
+</Step>
+
+<Step title = "Step 3">
+
+Ask User to Approve the Token:
+
+- Redirect the user to TMDB's authentication page to approve the request token:
+
+```
+https://www.themoviedb.org/authenticate/{REQUEST_TOKEN}
+```
+
+**Replace the `{REQUEST_TOKEN}` with your request_token**
+
+</Step>
+
+<Step title = "Step 4">
+Create a Session ID:
+
+- Once the user approves the request token, call the `https://api.themoviedb.org/3/authentication/session/new` endpoint with the approved token to create a session ID.
+
+</Step>
+
+</Steps>
+
+<Note>
+  In our [quickstart](/quickstart) page we will be making an API request using
+  our bearer token to one of the endpoint
+</Note>

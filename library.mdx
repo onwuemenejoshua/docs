@@ -1,66 +1,73 @@
 ---
-title: "🛠️ SDKs and Libraries"
+title: "SDKs and Libraries"
+icon: "screwdriver-wrench"
 description: "This page provides information about available SDKs, libraries, and client tools, along with installation instructions and usage examples."
 ---
 
-To make it easier to integrate with the TMDB API, we provide and support a variety of SDKs (Software Development Kits) and client libraries for popular programming languages. These libraries handle authentication, request formatting, and response parsing, allowing you to focus on building your application.
+To make it easier to integrate with the TMDB API, we provide and support a variety of SDKs (Software Development Kits) and client libraries for popular programming languages.
+
+These libraries handle authentication, request formatting, and response parsing, allowing you to focus on building your application.
 
 ## Official SDKs and Libraries
 
 The following are officially supported SDKs and libraries for the TMDB API:
 
-- JavaScript/Node.js
+<Tabs>
+    <Tab title = "JavaScript">
 
-  - Library: `tmdb-api-client`
+    * Library: `tmdb-api-client`
+    * Installation:
 
-  - Installation:
+    ```bash
+    npm install tmdb-api-client
+    ```
 
-  ```bash
-  npm install tmdb-api-client
-  ```
+    * Usage example
 
-  - Usage example
+```JavaScript
+    const TMDB = require('tmdb-api-client');
+    const client = new TMDB('YOUR_API_KEY');
 
-  ```JavaScript
-      const TMDB = require('tmdb-api-client');
-      const client = new TMDB('YOUR_API_KEY');
+    client.movies.getPopular()
+        .then(response => console.log(response.results))
+        .catch(error => console.error(error));
+```
 
-      client.movies.getPopular()
-          .then(response => console.log(response.results))
-          .catch(error => console.error(error));
-  ```
+    </Tab>
 
-* Python
 
-  - Library: `tmdbv3api`
+    <Tab title = "Python">
 
-  - Installation:
+    - Library: `tmdbv3api`
 
-  ```bash
-  pip install tmdbv3api
-  ```
+    - Installation:
 
-  - Usage example
+    ```bash
+    pip install tmdbv3api
+    ```
 
-  ```Python
-      from tmdbv3api import TMDb, Movie
+    * Usage example
 
-      tmdb = TMDb()
-      tmdb.api_key = 'YOUR_API_KEY'
+    ```Python
+         from tmdbv3api import TMDb, Movie
 
-      movie = Movie()
-      popular_movies = movie.popular()
+        tmdb = TMDb()
+        tmdb.api_key = 'YOUR_API_KEY'
 
-      for m in popular_movies:
-          print(m.title)
-  ```
+        movie = Movie()
+        popular_movies = movie.popular()
 
-* Java
+        for m in popular_movies:
+            print(m.title)
+    ```
+    </Tab>
 
-      * Library: ```tmdb-java```
+    <Tab title = "Java">
 
-      * Installation:
-      Add the following dependency to your ```pom.xml``` (Maven):
+    * Library: ```tmdb-java```
+
+    * Installation:
+    Add the following dependency to your ```pom.xml``` (Maven):
 
       ```xml
       <dependency>
@@ -70,7 +77,7 @@ The following are officially supported SDKs and libraries for the TMDB API:
       </dependency>
       ```
 
-  - Usage examples
+    * Usage examples:
 
     ```java
         import com.github.holgerbrandl.tmdb.TMDbClient;
@@ -87,8 +94,9 @@ The following are officially supported SDKs and libraries for the TMDB API:
         }
     }
     ```
+    </Tab>
 
-* PHP
+    <Tab title = "PHP">
 
       * Library: ```php-tmdb-api```
 
@@ -117,79 +125,89 @@ The following are officially supported SDKs and libraries for the TMDB API:
                 }
 
         ```
+    </Tab>
+
+</Tabs>
 
 ## Community-Maintained Libraries
 
 In addition to the official SDKs, the TMDB community has contributed libraries for other programming languages. These are not officially supported but may be useful:
 
-- Go
+<Tabs>
+    <Tab title="Go">
 
-      * Library: ```go-tmdb```
+    * Library: ```go-tmdb```
 
-      * GitHub: [go-tmdb](https://github.com/cyruzin/go-tmdb)
+    * GitHub: [go-tmdb](https://github.com/cyruzin/go-tmdb)
 
-      * Installation:
+    * Installation:
 
-      ```bash
-          go get github.com/cyruzin/go-tmdb
-      ```
+    ```bash
+    go get github.com/cyruzin/go-tmdb
+    ```
 
-      * Usage examples:
+    * Usage examples:
 
-      ```go
-          package main
+    ```go
+    package main
 
-          import (
-          "fmt"
-          "github.com/cyruzin/go-tmdb"
-        )
+    import (
+        "fmt"
+        "github.com/cyruzin/go-tmdb"
+    )
 
-      func main() {
-          tmdbClient, err := tmdb.Init("YOUR_API_KEY")
-          if err != nil {
-              panic(err)
-            }
-
-      movies, err := tmdbClient.GetMoviePopular(nil)
-      if err != nil {
-          panic(err)
+    func main() {
+        tmdbClient, err := tmdb.Init("YOUR_API_KEY")
+        if err != nil {
+            panic(err)
         }
 
-      for _, movie := range movies.Results {
-          fmt.Println(movie.Title)
+        movies, err := tmdbClient.GetMoviePopular(nil)
+        if err != nil {
+            panic(err)
         }
 
-  }
+        for _, movie := range movies.Results {
+            fmt.Println(movie.Title)
+        }
+    }
+    ```
 
-- C#
+    </Tab>
 
-        * Library: ```TMDbLib```
+    <Tab title="C#">
 
-        * GitHub: [TMDbLib](https://github.com/LordMike/TMDbLib)
+    * Library: ```TMDbLib```
 
-        * Installation:
+    * GitHub: [TMDbLib](https://github.com/LordMike/TMDbLib)
 
-        ```bash
-            dotnet add package TMDbLib
-        ```
+    * Installation:
 
-        * Usage example:
+    ```bash
+    dotnet add package TMDbLib
+    ```
 
-        ```C#
-            using TMDbLib.Client;
+    * Usage example:
 
-            var client = new TMDbClient("YOUR_API_KEY");
-            var popularMovies = client.GetMoviePopularListAsync().Result;
+    ```csharp
+    using TMDbLib.Client;
 
-            foreach (var movie in popularMovies.Results)
-            {
-                Console.WriteLine(movie.Title);
-            }
-        ```
+    var client = new TMDbClient("YOUR_API_KEY");
+    var popularMovies = client.GetMoviePopularListAsync().Result;
+
+    foreach (var movie in popularMovies.Results)
+    {
+        Console.WriteLine(movie.Title);
+    }
+    ```
+
+    </Tab>
+
+</Tabs>
 
 <Note>
 
-To see other SDK and Libraries that our API support, pls visit the [library](https://developer.themoviedb.org/docs/wrappers-and-libraries) page
+To see other SDK and Libraries that our API support, pls visit our [Wrappers & Libraries](https://developer.themoviedb.org/docs/wrappers-and-libraries) page
 
 </Note>
 

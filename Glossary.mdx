@@ -1,55 +1,337 @@
 ---
-title: "📚 Glossary"
+title: "Glossary"
+icon: "book"
 description: "This page defines technical terms, acronyms, and concepts used throughout the documentation to help users understand the API better."
 ---
 
 This glossary defines key terms, acronyms, and concepts used in the TMDB API documentation. Use this page as a reference to better understand the API and its functionality.
 
-## General-terms
+## A
 
-- API (Application Programming Interface)
-  A set of rules and protocols that allows software applications to communicate with each other. The TMDB API enables developers to access movie, TV show, and actor data programmatically.
+- **API (Application Programming Interface)**
 
-- Endpoint
-  A specific URL within an API that represents a resource or functionality. For example, /movie/popular is an endpoint that returns a list of popular movies.
+A set of protocols and tools that allows software applications to communicate with each other. TMDB's API enables developers to access movie, TV show, and actor data programmatically.
 
-- Request
-  A call made to an API endpoint to retrieve or manipulate data. Requests typically include an HTTP method (e.g., GET, POST) and parameters.
+- **API Key**
 
-- Response
-  The data returned by the API after processing a request. Responses are usually in JSON format and include the requested data or an error message.
+A unique identifier used to authenticate requests to the TMDB API. Developers must register for an API key to access TMDB's data.
 
-- JSON (JavaScript Object Notation)
-  A lightweight data format used for structuring data in API requests and responses. JSON is easy to read and write for both humans and machines.
+- **Append-to-Response**
 
-## TMDB-Specific Terms
+A feature in the TMDB API that allows developers to request additional data (e.g., credits, videos) in a single API call by appending parameters to the endpoint.
 
-- bearer_token
-  Your read access token that is used to authenticate requests made to an API
+- **[Authentication](/authentication)**
 
-- Movie ID
-  A unique numeric identifier assigned to each movie in the TMDB database. Used to retrieve specific movie details.
+The process of verifying a user's identity to grant access to specific API features (e.g., rating movies, creating lists). TMDB supports authentication via API tokens.
 
-- TV Show ID
-  A unique numeric identifier assigned to each TV show in the TMDB database. Used to retrieve specific TV show details.
+- **Account**
 
-- Person ID
-  A unique numeric identifier assigned to each actor, director, or crew member in the TMDB database. Used to retrieve specific person details.
+A user profile on TMDB that allows individuals to interact with the platform, rate movies, create lists, and more. API users can authenticate using their account credentials.
 
-- Genre
-  A category of movies or TV shows based on themes, styles, or content. Examples include Action, Comedy, and Drama. Each genre has a unique genre_id.
+## B
 
-- Poster Path
-  A relative URL pointing to the poster image of a movie or TV show. Combine this with the base image URL (https://image.tmdb.org/t/p/) to display the image.
+- **Backdrop**
 
-- Backdrop Path
-  A relative URL pointing to the backdrop image of a movie or TV show. Combine this with the base image URL (https://image.tmdb.org/t/p/) to display the image.
+A wide image used as a background in TMDB, typically representing a movie, TV show, or collection. Backdrops are often used in UI designs.
 
-- Vote Average
-  The average rating given to a movie or TV show by TMDB users. Ranges from 0 to 10.
+- **Backdrop Path**
 
-- Vote Count
-  The total number of votes (ratings) a movie or TV show has received on TMDB.
+The file path to a backdrop image in TMDB's image storage. This path is used to construct the full image URL by combining it with the base image URL.
+
+- **Base URL**
+
+The root URL for accessing TMDB's API (e.g., https://api.themoviedb.org/3/). All API endpoints are built upon this base URL.
+
+- **Bearer Token**
+
+A type of token used for authentication in API requests. It is included in the Authorization header of HTTP requests.
+
+- **Budget**
+
+The estimated production cost of a movie. TMDB provides budget information for movies where available.
+
+## C
+
+- **Cast**
+
+A list of actors and their roles in a movie or TV show. The cast is a key part of the credits data provided by TMDB.
+
+- **Certification**
+
+A rating assigned to a movie or TV show by a certification body (e.g., MPAA, BBFC). TMDB provides certification details for content in various regions.
+
+- **Collection**
+
+A group of movies or TV shows that are part of a series or franchise (e.g., the Marvel Cinematic Universe). TMDB provides collection data, including titles, posters, and overviews.
+
+- **Credits**
+
+Detailed information about the cast and crew involved in a movie or TV show. This includes actors, directors, producers, and other roles.
+
+- **Crew**
+
+A list of individuals involved in the production of a movie or TV show, excluding the cast. This includes directors, writers, producers, and more.
+
+## D
+
+- **Data Object**
+
+A structured set of data returned by the TMDB API, typically in JSON format. Examples include movie objects, TV show objects, and person objects.
+
+- **Documentation**
+
+The official guide provided by TMDB to help developers understand and use the API effectively. It includes details about endpoints, parameters, and responses.
+
+- **Discover**
+
+An endpoint in the TMDB API that allows developers to find movies and TV shows based on filters such as genre, release date, and popularity.
+
+## E
+
+- **Endpoint**
+
+A specific URL within the TMDB API that provides access to a particular resource or functionality (e.g., /movie/`{movie_id}` for movie details).
+
+- **Episode**
+
+A single installment of a TV show. TMDB provides detailed information about episodes, including titles, air dates, and summaries.
+
+- **External ID**
+
+A unique identifier used by other platforms (e.g., IMDb, Facebook) to reference movies, TV shows, or people. TMDB provides mappings for external IDs.
+
+## F
+
+- **File Path**
+
+The path to an image or file in TMDB's storage system. This path is combined with the base image URL to construct the full URL for accessing the file.
+
+- **Filter**
+
+A parameter used to narrow down API results based on specific criteria (e.g., genre, release year, language).
+
+- **Featured Crew**
+
+A subset of the crew that includes key roles such as directors, writers, and producers. TMDB highlights featured crew members in its API responses.
+
+G
+
+- **Genre**
+
+A category of movies or TV shows based on themes, styles, or narratives (e.g., Action, Comedy, Drama). TMDB provides genre IDs and names for filtering content.
+
+- **Guest Session**
+
+A temporary session that allows unauthenticated users to perform limited actions, such as rating movies, without creating a full account.
+
+## H
+
+- **HTTP Methods**
+
+The actions performed in API requests, such as GET (retrieve data), POST (create data), PUT (update data), and DELETE (remove data).
+
+- **HTTP Status Codes**
+
+Standardized codes returned by the TMDB API to indicate the result of a request (e.g., 200 for success, 404 for not found, 401 for unauthorized).
+
+- **Homepage**
+
+The official website or landing page for a movie, TV show, or person. TMDB provides homepage URLs where available.
+
+## I
+
+- **ID (Identifier)**
+
+A unique numeric value assigned to movies, TV shows, actors, and other entities in TMDB. IDs are used to retrieve specific details from the API.
+
+- **Image Configuration**
+
+Settings that define the base URL and available sizes for images (e.g., posters, backdrops) in TMDB. This configuration is used to construct image URLs dynamically.
+
+- **IMDb ID**
+
+A unique identifier used by IMDb (Internet Movie Database) to reference movies, TV shows, or people. TMDB provides mappings for IMDb IDs.
+
+## J
+
+- **JSON (JavaScript Object Notation)**
+
+A lightweight data format used by the TMDB API to structure and return data. JSON is easy to read and parse in most programming languages.
+
+## K
+
+- **Keyword**
+
+A term or phrase used to describe the themes, topics, or elements of a movie or TV show. TMDB provides keyword data for content.
+
+## L
+
+- **Language**
+
+The language in which movie or TV show data is returned. TMDB supports multiple languages, and developers can specify their preferred language using the language parameter.
+
+- **List**
+
+A user-created collection of movies or TV shows. TMDB allows authenticated users to create, update, and delete lists.
+
+- **Logo**
+
+An image representing a production company, network, or studio. TMDB provides logo data for companies and networks.
+
+## M
+
+- **Movie**
+
+A film or motion picture. TMDB provides detailed information about movies, including titles, release dates, ratings, and more.
+
+- **Movie ID**
+  A unique numeric identifier assigned to a movie in TMDB. This ID is used to retrieve specific movie details from the API.
+
+- **Media Type**
+
+A category of content, such as movie, tv, or person. TMDB uses media types to differentiate between different kinds of data.
+
+- **Metadata**
+
+Additional information about a movie, TV show, or person, such as runtime, release date, and production details.
+
+## N
+
+- **Network**
+
+A company or organization responsible for producing or distributing a TV show. TMDB provides network details, including names and logos.
+
+- **Now Playing**
+
+A list of movies currently showing in theaters. TMDB provides this data through the /movie/now_playing endpoint.
+
+## O
+
+- **Original Title**
+
+The title of a movie or TV show in its original language. TMDB provides both original and translated titles.
+
+## P
+
+- **Pagination**
+  A method of dividing large sets of data into smaller, manageable chunks (pages). TMDB uses pagination for endpoints that return multiple results (e.g., search results).
+
+- **Person**
+
+An individual involved in the entertainment industry, such as an actor, director, or producer. TMDB provides detailed information about people, including their filmography.
+
+- **Person ID**
+
+A unique numeric identifier assigned to a person in TMDB. This ID is used to retrieve specific person details from the API.
+
+- **Poster**
+
+A vertical image representing a movie, TV show, or collection. Posters are commonly used in UI designs and promotional materials.
+
+- **Poster Path**
+
+The file path to a poster image in TMDB's image storage. This path is used to construct the full image URL by combining it with the base image URL.
+
+- **Popularity**
+
+A metric used by TMDB to rank movies, TV shows, and people based on user engagement and interest.
+
+## Q
+
+- **Query**
+
+A search term or parameter used to find specific movies, TV shows, or people in the TMDB database.
+
+- **[Quickstart](/quickstart)**
+
+A beginner-friendly tutorial provided by TMDB to help developers make an API request.
+
+## R
+
+- **Rate Limiting**
+
+A restriction on the number of API requests a user can make within a specific time period. TMDB enforces rate limits to ensure fair usage of its API.
+
+- **Rating**
+
+A score assigned to a movie or TV show by users or critics. TMDB provides both average ratings and vote counts.
+
+- **Request**
+
+An HTTP call made to the TMDB API to retrieve or manipulate data. Requests typically include an API key and optional parameters.
+
+- **Response**
+
+The data returned by the TMDB API after processing a request. Responses are usually in JSON format and include the requested information or error details.
+
+- **Release Date**
+
+The date a movie or TV show was first released. TMDB provides release dates for different regions.
+
+## S
+
+- **Search Query**
+
+A string of text used to search for movies, TV shows, or people in the TMDB database. The API provides endpoints for performing searches.
+
+- **Season**
+
+A group of episodes in a TV show, typically released as part of a single production cycle. TMDB provides detailed information about seasons, including episode lists.
+
+- **Session**
+
+A temporary connection between a user and the TMDB API, often used for authentication or maintaining user-specific data.
+
+- **Status**
+
+The current state of a movie or TV show (e.g., "Released," "In Production"). TMDB provides status information for content.
+
+## T
+
+- **TV Show**
+  A television series or program. TMDB provides detailed information about TV shows, including episodes, seasons, and cast.
+
+- **TV Show ID**
+
+A unique numeric identifier assigned to a TV show in TMDB. This ID is used to retrieve specific TV show details from the API.
+
+- **Trending**
+
+A list of movies, TV shows, or people that are currently popular or gaining traction. TMDB provides trending data through the /trending endpoint.
+
+- **Tagline**
+
+A short, memorable phrase used to promote a movie or TV show. TMDB provides taglines for content where available.
+
+## U
+
+- **[User Authentication](/user-authentication)**
+
+The process of verifying a user's identity to grant access to specific API features (e.g., rating movies, creating lists). TMDB supports authentication via API tokens.
+
+- **User Rating**
+
+A score assigned to a movie or TV show by a specific user. TMDB allows authenticated users to submit ratings.
+
+## V
+
+- **Vote Average**
+
+The average rating given to a movie or TV show by TMDB users. This is calculated based on the total number of votes and their values.
+
+- **Vote Count**
+
+The total number of user votes submitted for a movie or TV show on TMDB. This metric indicates the popularity or engagement level of the content.
+
+- **Video**
+
+A trailer, teaser, or clip associated with a movie or TV show. TMDB provides video data, including URLs and types (e.g., YouTube).
+
+## W
+
+- **Watchlist**
+
+A list of movies or TV shows that a user plans to watch. TMDB allows authenticated users to add items to their watchlist.
 
 ## Need More Help?
 

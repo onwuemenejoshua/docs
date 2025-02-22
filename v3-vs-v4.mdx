@@ -1,0 +1,82 @@
+---
+title: "V3 vs V4"
+icon: "font-awesome"
+description: " This page contans detailed explanation of each version, their features, and the differences between them."
+---
+
+TMDB offers two main versions of its API: v3 and v4
+
+## TMDB API v3
+
+The v3 API is the most widely used version of TMDB's API. It provides access to a vast amount of data, including movies, TV shows, actors, images, videos, and user-generated content. The v3 API is RESTful and uses JSON as its data format.
+
+### Key Features
+
+- Movie Data: Access details such as title, release date, runtime, genres, ratings, and more.
+
+- TV Show Data: Retrieve information about TV shows, including episodes, seasons, and cast.
+
+- People Data: Get details about actors, directors, and other crew members.
+
+- Search Functionality: Search for movies, TV shows, and people.
+
+- Images and Videos: Access posters, backdrops, trailers, and clips.
+
+- User Authentication: Supports user authentication for managing favorites, watchlists, and ratings.
+
+- Pagination: Supports pagination for large datasets.
+
+- Rate Limiting: API requests are rate-limited to ensure fair Usage
+
+### Example Endpoint
+
+Get Movie Details:
+
+```
+GET https://api.themoviedb.org/3/movie/{movie_id}?api_key=YOUR_API_KEY
+```
+
+## TMDB API v4
+
+The v4 API is a newer version of TMDB's API, designed to provide a more streamlined and secure experience. It introduces significant changes, including a new authentication method and improved security features. Unlike v3, v4 uses Bearer Token authentication instead of an API key.
+
+### Key Features
+
+- Enhanced Security: Improved security measures to protect user data.
+
+- Backward Compatibility: Works alongside v3, allowing developers to transition gradually.
+
+- Limited Endpoints: As of now, v4 has fewer endpoints compared to v3, focusing primarily on authentication and user-related operations.
+
+### Example Endpoint
+
+Get Account Details:
+
+```
+GET https://api.themoviedb.org/4/account?api_key=YOUR_BEARER_TOKEN
+```
+
+<Note>Requires a valid Bearer Token in the request header.</Note>
+
+## Differences Between v3 and v4
+
+| Feature                | v3                             | v4                                |
+| :--------------------- | :----------------------------- | :-------------------------------- |
+| Security               | Standard                       | Enhanced                          |
+| Endpoints              | Extensive (movies, TV, people) | Limited (focus on authentication) |
+| Usage                  | Broad (data retrieval)         | Primarily for authentication      |
+| Backward Compatibility | No                             | Yes (works alongside v3)          |
+
+## Which Version Should You Use?
+
+- Use v3 if you need access to a wide range of data, such as movie details, TV show information, and search functionality. It is the most feature-rich and widely supported version.
+
+- Use v4 if you are focusing on user authentication or need enhanced security features. However, note that v4 currently has limited functionality compared to v3.
+
+## Resources
+
+- v3 API Documentation: https://developers.themoviedb.org/3
+
+- v4 API Documentation: https://developers.themoviedb.org/4
+
+- API Support Forum: https://www.themoviedb.org/talk

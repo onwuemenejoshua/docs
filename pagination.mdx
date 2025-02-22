@@ -1,5 +1,6 @@
 ---
-title: "📄 Pagination"
+title: "Pagination"
+icon: "book-open-cover"
 description: "This page explains how to handle pagination and filtering when making requests to the API."
 ---
 
@@ -9,11 +10,13 @@ When working with the TMDB API, many endpoints return large datasets. To manage 
 
 ### Pagination
 
-Pagination allows you to retrieve a subset of the available data by specifying the number of items to return. Most endpoints that return a list of items (e.g., movies, TV shows, or people) are paginated. This means the results are split into smaller chunks (pages) to improve performance and usability.
+Pagination allows you to retrieve a subset of the available data by specifying the number of items to return.
+
+Most endpoints that return a list of items (e.g., movies, TV shows, or people) are paginated. This means the results are split into smaller chunks (pages) to improve performance and usability.
 
 #### How Pagination Works
 
-By default, the API returns 20 items per page.
+By default, our API returns the first page, when you do not select any page.
 
 You can control which page of results to retrieve using the page query parameter.
 
@@ -56,13 +59,23 @@ Many endpoints allow you to filter results based on specific criteria. Filtering
 
 Here are some commonly used filter parameters:
 
-| Parameters  | Descriptions                                              | Example                  |
-| ----------- | --------------------------------------------------------- | ------------------------ |
-| language    | Filter results by language (e.g., en-US).                 | &language=en-US          |
-| region      | Filter results by region (e.g., US).                      | &region=US               |
-| year        | Filter movies or TV shows by release year.                | &year=2020               |
-| sort_by     | Sort results by a specific field (e.g., popularity.desc). | &sort_by=popularity.desc |
-| with_genres | Filter movies or TV shows by genre IDs.                   | &with_genres=28,12       |
+| Parameters           | Descriptions                                                             | Example                                    |
+| :------------------- | ------------------------------------------------------------------------ | :----------------------------------------- |
+| language             | Filter results by language (e.g., en-US).                                | &language=en-US                            |
+| region               | Filter results by region (e.g., US).                                     | &region=US                                 |
+| year                 | Filter movies or TV shows by release year.                               | &year=2020                                 |
+| sort_by              | Sort results by a specific field (e.g., popularity.desc).                | &sort_by=popularity.desc                   |
+| with_genres          | Filter movies or TV shows by genre IDs.                                  | &with_genres=28,12                         |
+| with_keywords        | Filter results by keyword IDs.                                           | &with_keywords=1234,5678                   |
+| with_cast            | Filter results by cast member IDs.                                       | &with_cast=123,456                         |
+| with_crew            | Filter results by crew member IDs.                                       | &with_crew=789,101                         |
+| with_companies       | Filter results by production company IDs                                 | &with_companies=123,456                    |
+| certification        | Filter results by certification (e.g., PG-13).                           | &certification=PG-13                       |
+| include_adult        | Include adult content in results (true/false).                           | &include_adult=true                        |
+| include_video        | Include video content in results (true/false).                           | &include_video=true                        |
+| primary_release_year | Filter movies by primary release year.                                   | &primary_release_year=2018                 |
+| page                 | Specify the page number for paginated results.                           | &page=2                                    |
+| append_to_response   | Append additional data (e.g., credits, videos, similar) to the response. | &append_to_response=credits,videos,similar |
 
 **Filtered Request**
 
@@ -74,7 +87,9 @@ GET https://api.themoviedb.org/3/movie/popular?your_bearer_token=YOUR_BEARER_TOK
 
 ### Combining Pagination and Filtering
 
-You can combine pagination and filtering to retrieve specific subsets of data. For example, to get the third page of action movies (genre_id=28) sorted by popularity:
+You can combine pagination and filtering to retrieve specific subsets of data.
+
+For example, to get the third page of action movies with a (genre_id=28) sorted by popularity:
 
 ```
 GET https://api.themoviedb.org/3/discover/movie?your_bearer_token=YOUR_BEARER_TOKEN&with_genres=28&sort_by=popularity.desc&page=3

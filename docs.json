@@ -1,13 +1,13 @@
 {
   "$schema": "https://mintlify.com/docs.json",
   "theme": "mint",
-  "name": "Starter Kit",
+  "name": "API documentation",
   "colors": {
     "primary": "#0D9373",
     "light": "#07C983",
     "dark": "#0D9373"
   },
-  "favicon": "/favicon.svg",
+  "favicon": "/logo/tmdb-logo.svg",
   "navigation": {
     "tabs": [
       {
@@ -18,6 +18,8 @@
             "pages": [
               "introduction",
               "authentication",
+              "user-authentication",
+              "v3-vs-v4",
               "quickstart",
               "Error-code",
               "pagination",
@@ -42,49 +44,25 @@
           
         ]
       }
-    ],
-    "global": {
-      "anchors": [
-        {
-          "anchor": "Linkedin",
-          "href": "https://www.linkedin.com/in/joshua-onwuemene/",
-          "icon": "book-open-cover"
-        },
-        {
-          "anchor": "Facebook",
-          "href": "https://web.facebook.com/profile.php?id=61568200452824",
-          "icon": "slack"
-        },
-        {
-          "anchor": "Blog",
-          "href": "https://dev.to/onwuemene",
-          "icon": "newspaper"
-        }
-      ]
-    }
+    ]
+    
   },
   "logo": {
-    "light": "/logo/light.svg",
-    "dark": "/logo/dark.svg"
+    "light": "/logo/tmdb-logo.svg",
+    "dark": "/logo/tmdb-logo.svg"
   },
   "navbar": {
     "links": [
       {
         "label": "Support",
-        "href": "mailto:hi@mintlify.com"
+        "href": "https://www.themoviedb.org/about/get-in-touch/"
       }
     ],
     "primary": {
       "type": "button",
-      "label": "Dashboard",
-      "href": "https://dashboard.mintlify.com"
-    }
-  },
-  "footer": {
-    "socials": {
-      "github": "https://github.com/onwuemenejoshua",
-      "linkedin": "https://www.linkedin.com/in/joshua-onwuemene/",
-      "facebook": "https://web.facebook.com/profile.php?id=61568200452824"
+      "label": "Login",
+      "href": "https://www.themoviedb.org/"
     }
   }
+  
 }

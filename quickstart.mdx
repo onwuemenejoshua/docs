@@ -1,25 +1,26 @@
 ---
-title: "⚡ Quickstart"
+title: "Quickstart"
+icon: "bolt"
 description: "This page will show you how to make an API Request"
 ---
 
-For this quickstart, we’ll use the **"Details endpoint"** under the **"Account Folder"** to get the public details of an account on TMDB.
+For this quickstart, you'll use the **Details** endpoint in the **Account** Folder to retrieve the public details of an account on TMDB.
 
 ```
-   GET https://api.themoviedb.org/3/account/{account_id}
+GET https://api.themoviedb.org/3/account/{account_id}
 ```
 
-1. Get the account_id
+## Get your account_id
 
-The endpoint to fetch the account_id:
+The endpoint to fetch the account_id is:
 
 ```
 GET https://api.themoviedb.org/3/account
 ```
 
-- Add your query parameter which are; **your_bearer_token** to authenticate your request.
+- Add the query parameter **your_bearer_token** to authenticate your request.
 
-```
+```bash
 GET https://api.themoviedb.org/3/account?bearer_token=YOUR_BEARER_TOKEN
 ```
 
@@ -46,57 +47,63 @@ Example response
 
 <Note>Your account_id is an integer value.</Note>
 
-2. Get the account details endpoint.
+## Get the Account details endpoint.
 
 ```
-   GET https://api.themoviedb.org/3/account/{account_id}
+GET https://api.themoviedb.org/3/account/{account_id}
 ```
 
-Replace {account_id} with your TMDb account_id.
+**Replace the `{account_id}` with your TMDb account_id**
 
-- Add your bearer token
+To authenticate your request, include your bearer_token as a query parameter or in the request header.
 
-To authenticate your request, include your bearer_token as a query parameter or in the request header
+<Tabs>
+  <Tab title = "bearer_token as query parameter">
+  ```bash
+  https://api.themoviedb.org/3/account/{account_id}
+  ?bearer_token=YOUR_BEARER_TOKEN
+  ```
+  </Tab>
 
-    * Using the bearer_token as a Query Parameter
-
-    ```
-    https://api.themoviedb.org/3/account/{account_id}?bearer_token=YOUR_BEARER_TOKEN
-    ```
-
-    * Using the bearer_token in the Request Header
+  <Tab title = "bearer_token in the Request Header">
 
     ```
     GET https://api.themoviedb.org/3/account/{account_id}
     Authorization: Bearer YOUR_BEARER_TOKEN
     ```
 
-3. Make the Request
+  </Tab>
+</Tabs>
+
+## Make the Request
 
 Below are examples of how to make the request using different tools:
 
-- Using cURL
+<Tabs>
+  <Tab title = "Using cURL">
+  ```bash
+  curl "https://api.themoviedb.org/3/account/{account_id}?api_key=YOUR_BEARER_TOKEN"
+  ```
+  </Tab>
 
-Run the following command in your terminal:
+  <Tab title = "Using Postman">
+  1. Open Postman and create a new request.
 
-```
-curl "https://api.themoviedb.org/3/account/{account_id}?api_key=YOUR_BEARER_TOKEN"
-```
+2. Set the request type to GET.
 
-- Using Postman
+3. Enter the URL:
 
-  - Open Postman and create a new request.
+   ```bash
+   https://api.themoviedb.org/3/account/{account_id}?api_key=YOUR_API_KEY
+   ```
 
-  - Set the request type to GET.
+4. Click Send.
 
-  - Enter the URL: https://api.themoviedb.org/3/account/{account_id}?api_key=YOUR_API_KEY.
+  </Tab>
 
-  - Click Send.
+  <Tab title = "Using Python">
 
-- Using Python
-  Here’s an example using the requests library:
-
-```Python
+```python
 import requests
 
 api_key = "YOUR_API_KEY"
@@ -109,7 +116,11 @@ data = response.json()
 print(data)
 ```
 
-4. Example response
+  </Tab>
+
+</Tabs>
+
+## Example response
 
 If the request is successful, you’ll receive a JSON response containing details about the account. Here’s an example response:
 

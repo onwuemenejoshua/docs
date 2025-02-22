@@ -1,18 +1,20 @@
 ---
-title: "🔐 Authentication"
+title: "Authentication"
+icon: "Key"
 description: "This page will show you how to set up your bearer token"
 ---
 
 Our **TMDb API** uses the Bearer Token to interact with our API. Here's how get the bearer token.
 
-<Note>
+<Warning>
   The API key is not functional at the moment, hence you are to work with the
   Read accces token (Bearer token)
-</Note>
+</Warning>
 
-1. Create a TMDb account
+<Steps>
 
-Before you can obtain your bearer token, you need to have a TMDb account. If you don’t already have one, follow these steps:
+<Step title = "Step 1">
+Create your TMDB account.
 
 - Go to [TMDb](https://www.themoviedb.org/)
 - Click on Sign Up in the top-right corner.
@@ -23,15 +25,13 @@ Before you can obtain your bearer token, you need to have a TMDb account. If you
 
 - Verify your email address by clicking the link sent to your inbox.
 
-![Your TMDb profile](images/annotely_image2.png)
+</Step>
 
-2. Request your bearer token
+<Step title="Step 2">
 
-Once you have a TMDb account, you can request your bearer token:
+Request your bearer token
 
 - In your profile, click on settings
-
-![Your TMDb profile](images/annotely_image3.png)
 
 - scroll to the API tab and click on **"click here"**
 
@@ -43,17 +43,10 @@ Once you have a TMDb account, you can request your bearer token:
 
 - Read and agree to the TMDb API terms of use.
 
-![terms of use](images/term-of-use.png)
-
-![Accept terms of use](images/annotely_image6.png)
-
 - Fill the necessary details and submit the form and you will see your API key and your read access token also known as bearer token.
-
-![fill the api form](images/annotely_image7.png)
 
 ![API key and Bearer token](images/annotely_image8.png)
 
-<Note>
-  In our [quickstart](/quickstart) page we will be making an API request using
-  our bearer token to one of the endpoint
-</Note>
+</Step>
+
+</Steps>

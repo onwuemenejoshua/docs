@@ -1,5 +1,6 @@
 ---
-title: "🔄 Versioning"
+title: "Versioning and Changelog"
+icon: "rotate"
 description: "This page documents changes to the API, explains versioning, and provides guidance on accessing older versions."
 ---
 
@@ -18,3 +19,103 @@ The TMDB API uses semantic versioning to manage changes. The version number is i
 ### Accessing Older Versions
 
 Older versions of the API are not maintained or supported. Once a new version is released, all users are encouraged to migrate to the latest version. If you rely on deprecated features, plan to update your integration as soon as possible.
+
+## Changelog
+
+Welcome to the TMDB API Changelog! This section tracks the latest updates, improvements, and changes to The Movie Database (TMDB) API.
+
+### 2023 Updates
+
+#### October 2023
+
+- New Endpoint: Added support for fetching trending TV shows and movies by region.
+
+  - Endpoint: `/trending/{media_type}/{time_window}`
+
+  - Parameters: `region` (optional)
+
+- Enhancement: Improved rate limiting for better API performance.
+
+- Bug Fix: Resolved an issue where some movie posters were not loading correctly.
+
+#### August 2023
+
+- New Feature: Added support for user-generated content (UGC) in reviews and comments.
+
+  - Endpoint: `/review/{review_id}`
+
+- Enhancement: Updated the `/search` endpoint to include more accurate results for partial matches.
+
+- Deprecation: Removed deprecated parameters from the `/discover` endpoint.
+
+### 2022 Updates
+
+#### June 2022
+
+- New Endpoint: Introduced the ability to fetch movie credits by department.
+
+  - Endpoint: `/movie/{movie_id}/credits`
+
+  - Parameters: `department` (optional)
+
+- Enhancement: Improved caching for faster response times.
+
+- Bug Fix: Fixed an issue where some TV show episodes were missing metadata.
+
+#### March 2022
+
+- New Feature: Added support for multi-language translations in movie and TV show descriptions.
+
+  - Endpoint: `/movie/{movie_id}/translations`
+
+  - Endpoint: `/tv/{tv_id}/translations`
+
+- Enhancement: Updated the `/person` endpoint to include social media links.
+
+### 2021 Updates
+
+#### November 2021
+
+- New Endpoint: Added support for fetching upcoming movies and TV shows.
+
+  - Endpoint: `/movie/upcoming`
+
+  - Endpoint: `/tv/upcoming`
+
+- Enhancement: Improved error messages for invalid bearer_token.
+
+- Bug Fix: Resolved an issue where some TV show seasons were not being sorted correctly.
+
+### July 2021
+
+- New Feature: Introduced the ability to filter movies and TV shows by genre.
+
+  - Endpoint: `/discover/movie`
+
+  - Endpoint: `/discover/tv`
+
+  - Parameters: `with_genres` (optional)
+
+- Enhancement: Updated the `/configuration` endpoint to include new image sizes.
+
+### 2020 Updates
+
+#### April 2020
+
+- New Endpoint: Added support for fetching movie and TV show recommendations.
+
+  - Endpoint: `/movie/{movie_id}/recommendations`
+
+  - Endpoint: `/tv/{tv_id}/recommendations`
+
+- Enhancement: Improved search accuracy for non-English titles.
+
+- Bug Fix: Fixed an issue where some movie release dates were incorrect.
+
+### Older Updates
+
+### 2019 and Earlier
+
+- **Initial Release**: Launched the TMDB API with support for movies, TV shows, and actors.
+
+- **Early Features**: Included endpoints for searching, discovering, and fetching details about movies, TV shows, and people.

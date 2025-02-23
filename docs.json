@@ -11,10 +11,10 @@
   "navigation": {
     "tabs": [
       {
-        "tab": "Documentation",
+        "tab": "API Overview",
         "groups": [
           {
-            "group": "Get Started",
+            "group": "Documentation",
             "pages": [
               "introduction",
               "authentication",

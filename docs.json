@@ -60,6 +60,10 @@
       {
         "label": "OAS",
         "href": "https://raw.githubusercontent.com/onwuemenejoshua/docs/refs/heads/main/api-reference/openapi3.json"
+      },
+      {
+        "label": "Postman",
+        "href": "https://documenter.getpostman.com/view/32759704/2sAYdeLrFR#intro"
       }
     ],
     "primary": {

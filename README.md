@@ -58,7 +58,7 @@ Contributions are welcome! If you’d like to contribute to this project, please
 
 3. Make your changes and commit them.
 
-4. Push your changes to your fork.
+4. Push your changes to your fork repository.
 
 5. Submit a pull request.
 

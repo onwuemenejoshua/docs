@@ -42,26 +42,10 @@ Note: The docs was built with Postman, OpenAPI spec File and Mintlify and it con
 
 ![introduction-mintlify](images/introduction-mintlify.png)
 
-To use the TMDB Movie Database API, you don't need to install anything. Simply make HTTP requests to the appropriate endpoints. However, if you want to run the API locally. Just ```clone``` our repository
+To use the TMDB Movie Database API, you don't need to install anything. Simply make HTTP requests to the appropriate endpoints. However, if you want to run the API locally. Just ```clone``` the repository
 
 ```
 git clone https://github.com/onwuemenejoshua/docs.git
 ```
-
-## Contributing
-
-Contributions are welcome! If you’d like to contribute to this project, please follow these steps:
-
-1. Fork the repository.
-
-2. Create a new branch for your feature or bugfix.
-
-3. Make your changes and commit them.
-
-4. Push your changes to your fork repository.
-
-5. Submit a pull request.
-
-Please ensure your code follows the project’s coding standards and includes appropriate tests.
 
 Thanks🚀
